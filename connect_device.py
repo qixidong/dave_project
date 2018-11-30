@@ -19,6 +19,6 @@ for i in range(5):
         break
     if i == 4 or i == 5:
         sys.exit("target device seems unavailable right now")
-hdl.setwinsize(40,200)
+hdl.setwinsize(40,160)
 #print(hdl.getwinsize())
 hdl.interact()
