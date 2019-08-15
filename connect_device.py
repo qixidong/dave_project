@@ -7,9 +7,11 @@ username = sys.argv[2]
 password = sys.argv[3]
 
 expect_list = ['continue connecting \(yes\/no\)\? $', 'Password: $', 'Password for', 'password: $',pexpect.EOF,pexpect.TIMEOUT]
-hdl = pexpect.spawn('ssh %s@%s'%(username,ip))
+hdl = pexpect.spawnu('ssh %s@%s'%(username,ip))
+#hdl.logfile = sys.stdout
 for i in range(5):
     i = hdl.expect(expect_list, timeout = 5)
+    print(hdl.before)
     if i == 0:
         hdl.sendline('yes')
         continue
